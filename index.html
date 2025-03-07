@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Personal Branding</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Pacifico&family=Inter:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/remixicon@4.5.0/fonts/remixicon.css"
+      rel="stylesheet"
+    />
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: "#58d6fd",
+              secondary: "#2A2A2A",
+            },
+            borderRadius: {
+              none: "0px",
+              sm: "8px",
+              DEFAULT: "12px",
+              md: "16px",
+              lg: "20px",
+              xl: "24px",
+              "2xl": "28px",
+              "3xl": "32px",
+              full: "9999px",
+              button: "12px",
+            },
+          },
+        },
+      };
+    </script>
+    <style>
+      :where([class^="ri-"])::before {
+        content: "\f3c2";
+      }
+      body {
+        font-family: "Inter", sans-serif;
+        background-image: url(asset/bg_all.jpg);
+        color: #e5e5e5;
+      }
+      .gradient-text {
+        background: linear-gradient(135deg, #ea34de 0%, #4f6ce1 100%, #e224ff);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+      }
+      .service-card {
+        background: rgba(29, 118, 173, 0.05);
+        backdrop-filter: blur(100px);
+        transition: all 0.3s ease;
+      }
+      .service-card:hover {
+        transform: translateY(-5px);
+        background: rgba(255, 255, 255, 0.1);
+      }
+      .testimonial-card {
+        background: rgba(255, 255, 255, 0.05);
+        backdrop-filter: blur(10px);
+      }
+      .portfolio-item {
+        position: relative;
+        overflow: hidden;
+        transition: all 0.3s ease;
+      }
+      .portfolio-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: rgba(253, 205, 34, 0.9);
+        opacity: 0;
+        transition: all 0.3s ease;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+      }
+      .portfolio-item:hover .portfolio-overlay {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="min-h-screen">
+    <nav class="fixed w-full bg-gradient-text/80 backdrop-blur-lg z-50">
+      <div class="container mx-auto px-12 sm:24 py-4">
+        <div class="flex items-center justify-between">
+          <a href="#" class="text-3xl font-['Pacifico'] text-primary"
+            ><img src="asset/logo.png" class="w-10 sm:w-10" alt=""
+          /></a>
+          <div class="hidden md:flex items-center space-x-4 lg:space-x-8">
+            <a
+              href="#home"
+              class="text-sm lg:text-base text-white-300 hover:text-primary transition-colors"
+              >Home</a
+            >
+            <a
+              href="#about"
+              class="text-sm lg:text-base text-white-300 hover:text-primary transition-colors"
+              >About</a
+            >
+            <a
+              href="#portfolio"
+              class="text-sm lg:text-base text-white-300 hover:text-primary transition-colors"
+              >Portfolio</a
+            >
+            <a
+              href="#services"
+              class="text-sm lg:text-base text-white-300 hover:text-primary transition-colors"
+              >Services</a
+            >
+            <a
+              href="#contact"
+              class="text-sm lg:text-base bg-primary text-black px-4 lg:px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors"
+              >Contact</a
+            >
+          </div>
+          <!-- <button class="md:hidden w-10 h-10 flex items-center justify-center">
+            <i class="ri-menu-line text-2xl"></i>
+          </button> -->
+        </div>
+      </div>
+    </nav>
+    <section
+      id="home"
+      class="min-h-screen flex items-center relative overflow-hidden pt-20"
+    >
+      <div class="absolute inset-0 z-0">
+        <img
+          src="asset/bg.jpg"
+          class="w-full h-full object-cover object-center opacity-80"
+          alt="Background"
+        />
+      </div>
+      <div class="container mx-auto px-12 relative z-10">
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <h1
+              class="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold mb-4 md:mb-6"
+            >
+              <span class="gradient-text">Muhammad Farhan</span><br />
+              Web Dev & Grapic Design
+            </h1>
+            <p class="text-lg sm:text-xl text-white-400 mb-6 md:mb-8">
+              Berpengalaman Lebih Dari 4 Tahun Dalam Pembuatan Web dan Design
+              Grafis,
+            </p>
+            <div
+              class="flex flex-col sm:flex-row space-y-4 sm:space-y-0 sm:space-x-4"
+            >
+              <a
+                href="#portfolio"
+                class="bg-primary text-black px-6 sm:px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors text-center"
+                >Hasil Kerja</a
+              >
+              <a
+                href="#contact"
+                class="border-2 border-white-600 text-black px-6 sm:px-8 py-3 !rounded-button hover:border-primary hover:text-primary transition-colors text-center"
+                >Contact Us</a
+              >
+            </div>
+          </div>
+          <div class="relative">
+            <img
+              src="asset/P1790070.JPG"
+              class="w-full h-100 rounded-2xl shadow-2xl"
+              alt="Portrait"
+            />
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="about" class="py-20 bg-secondary/30">
+      <div class="container mx-auto px-4 sm:px-6">
+        <div class="grid md:grid-cols-2 gap-8 lg:gap-12 items-center">
+          <div>
+            <img
+              src="asset/P1710778.JPG"
+              class="w-full rounded-2xl shadow-2xl"
+              alt="About"
+            />
+          </div>
+          <div>
+            <h2 class="text-4xl font-bold mb-6">Tentang Saya</h2>
+            <p class="text-white-400 mb-6">
+              With over 8 years of experience in digital design and creative
+              direction, I've helped numerous brands establish their digital
+              presence through thoughtful design and strategic thinking.
+            </p>
+            <div class="space-y-4 mb-8">
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>UI/UX Design</span>
+                  <span>70%</span>
+                </div>
+                <div class="h-2 bg-white-700 rounded-full">
+                  <div
+                    class="h-2 bg-primary rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Grapic Design</span>
+                  <span>88%</span>
+                </div>
+                <div class="h-2 bg-white-700 rounded-full">
+                  <div
+                    class="h-2 bg-primary rounded-full"
+                    style="width: 88%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Motion Design</span>
+                  <span>82%</span>
+                </div>
+                <div class="h-2 bg-white-700 rounded-full">
+                  <div
+                    class="h-2 bg-primary rounded-full"
+                    style="width: 82%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Web Development</span>
+                  <span>95%</span>
+                </div>
+                <div class="h-2 bg-white-700 rounded-full">
+                  <div
+                    class="h-2 bg-primary rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+              <div>
+                <div class="flex justify-between mb-2">
+                  <span>Tester Web</span>
+                  <span>95%</span>
+                </div>
+                <div class="h-2 bg-white-700 rounded-full">
+                  <div
+                    class="h-2 bg-primary rounded-full"
+                    style="width: 95%"
+                  ></div>
+                </div>
+              </div>
+            </div>
+            <a
+              href="#contact"
+              class="bg-primary text-black px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors inline-block"
+              >Let's Connect</a
+            >
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="portfolio" class="py-20">
+      <div class="container mx-auto px-4 sm:px-12">
+        <h2 class="text-4xl font-bold text-center mb-12">Featured Projects</h2>
+        <div class="flex flex-wrap justify-center mb-8 md:mb-12 gap-3 px-4">
+          <button
+            data-category="all"
+            class="filter-btn bg-primary text-black px-4 sm:px-6 py-2 !rounded-button hover:bg-primary/90 transition-colors text-sm sm:text-base"
+          >
+            All
+          </button>
+          <button
+            data-category="uiux"
+            class="filter-btn bg-white-800 text-white-300 px-4 sm:px-6 py-2 !rounded-button hover:bg-primary hover:text-black transition-colors text-sm sm:text-base"
+          >
+            UI/UX
+          </button>
+          <button
+            data-category="branding"
+            class="filter-btn bg-white-800 text-white-300 px-4 sm:px-6 py-2 !rounded-button hover:bg-primary hover:text-black transition-colors text-sm sm:text-base"
+          >
+            Branding
+          </button>
+          <button
+            data-category="motion"
+            class="filter-btn bg-white-800 text-white-300 px-4 sm:px-6 py-2 !rounded-button hover:bg-primary hover:text-black transition-colors text-sm sm:text-base"
+          >
+            Motion
+          </button>
+        </div>
+        <div
+          id="portfolio-grid"
+          class="grid md:grid-cols-2 lg:grid-cols-3 gap-8"
+        >
+          <div
+            class="portfolio-item rounded-lg overflow-hidden"
+            data-category="uiux"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/b1993f05c68b73fa34a9a63872c3c85f.jpg"
+              class="w-full"
+              alt="Project 1"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-xl font-bold text-black mb-2">
+                Mobile App Design
+              </h3>
+              <p class="text-black">UI/UX Design</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item rounded-lg overflow-hidden"
+            data-category="branding"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/f30b81dd78c70b0b93f5432541cd9d20.jpg"
+              class="w-full"
+              alt="Project 2"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-xl font-bold text-black mb-2">Brand Identity</h3>
+              <p class="text-black">Branding</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item rounded-lg overflow-hidden"
+            data-category="motion"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/61165750ca8bc5891caf725c0546ba54.jpg"
+              class="w-full"
+              alt="Project 3"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-xl font-bold text-black mb-2">Motion Graphics</h3>
+              <p class="text-black">Motion Design</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item rounded-lg overflow-hidden"
+            data-category="uiux"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/0c250fc5adceeb1328dc507e52a8116d.jpg"
+              class="w-full"
+              alt="Project 4"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-xl font-bold text-black mb-2">
+                Dashboard Design
+              </h3>
+              <p class="text-black">UI/UX Design</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item rounded-lg overflow-hidden"
+            data-category="branding"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/f9ce91a9def4e7789c94093ad354c983.jpg"
+              class="w-full"
+              alt="Project 5"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-xl font-bold text-black mb-2">
+                Luxury Packaging
+              </h3>
+              <p class="text-black">Branding</p>
+            </div>
+          </div>
+          <div
+            class="portfolio-item rounded-lg overflow-hidden"
+            data-category="motion"
+          >
+            <img
+              src="https://public.readdy.ai/ai/img_res/02d7af3ef63c3a8d1326b0d9b1fe8048.jpg"
+              class="w-full"
+              alt="Project 6"
+            />
+            <div class="portfolio-overlay">
+              <h3 class="text-xl font-bold text-black mb-2">3D Animation</h3>
+              <p class="text-black">Motion Design</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="services" class="py-20">
+      <div class="container mx-auto px-4 sm:px-12">
+        <h2 class="text-5xl font-bold text-center mb-12 gradient-text">
+          Services
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="service-card p-6 md:p-8 rounded-lg">
+            <div
+              class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-layout-4-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 gradient-text">UI/UX Design</h3>
+            <p class="text-white-400">
+              Creating intuitive and engaging user experiences through
+              thoughtful interface design.
+            </p>
+          </div>
+          <div class="service-card p-6 md:p-8 rounded-lg">
+            <div
+              class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-paint-brush-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 gradient-text">Brand Strategy</h3>
+            <p class="text-white-400">
+              Developing comprehensive brand identities that resonate with your
+              target audience.
+            </p>
+          </div>
+          <div class="service-card p-6 md:p-8 rounded-lg">
+            <div
+              class="w-16 h-16 bg-primary/20 rounded-lg flex items-center justify-center mb-6"
+            >
+              <i class="ri-movie-line text-primary text-2xl"></i>
+            </div>
+            <h3 class="text-xl font-bold mb-4 gradient-text">Motion Design</h3>
+            <p class="text-white-400">
+              Bringing designs to life through engaging animations and motion
+              graphics.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <!-- <section id="testimonials" class="py-20">
+      <div class="container mx-auto px-4 sm:px-12">
+        <h2 class="text-4xl font-bold text-center mb-12">
+          Client Testimonials
+        </h2>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 md:gap-8">
+          <div class="testimonial-card p-8 rounded-lg">
+            <div class="text-primary text-4xl mb-4">"</div>
+            <p class="text-white-400 mb-6">
+              Working with this designer was an absolute pleasure. Their
+              attention to detail and creative vision transformed our brand.
+            </p>
+            <div class="flex items-center">
+              <img
+                src="https://public.readdy.ai/ai/img_res/8f6c7688671b0cda752eb0a7401c2e75.jpg"
+                class="w-12 h-12 rounded-full mr-4"
+                alt="Client"
+              />
+              <div>
+                <h4 class="font-bold">Sarah Anderson</h4>
+                <p class="text-white-400">CEO, TechStart</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card p-8 rounded-lg">
+            <div class="text-primary text-4xl mb-4">"</div>
+            <p class="text-white-400 mb-6">
+              Exceptional creativity and professionalism. The delivered work
+              exceeded our expectations in every way.
+            </p>
+            <div class="flex items-center">
+              <img
+                src="https://public.readdy.ai/ai/img_res/42a284061e1a6c2e075cd4b2d5115962.jpg"
+                class="w-12 h-12 rounded-full mr-4"
+                alt="Client"
+              />
+              <div>
+                <h4 class="font-bold">Michael Chen</h4>
+                <p class="text-white-400">Marketing Director, InnovateCo</p>
+              </div>
+            </div>
+          </div>
+          <div class="testimonial-card p-8 rounded-lg">
+            <div class="text-primary text-4xl mb-4">"</div>
+            <p class="text-white-400 mb-6">
+              Their design expertise and strategic thinking helped us achieve
+              our business goals through beautiful design.
+            </p>
+            <div class="flex items-center">
+              <img
+                src="https://public.readdy.ai/ai/img_res/8111f86127e9c77dc54c1bdb9c8cf28a.jpg"
+                class="w-12 h-12 rounded-full mr-4"
+                alt="Client"
+              />
+              <div>
+                <h4 class="font-bold">Emma Thompson</h4>
+                <p class="text-white-400">Creative Director, DesignLab</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section> -->
+    <section id="contact" class="py-20 bg-secondary/30">
+      <div class="container mx-auto px-4 sm:px-12">
+        <div class="grid md:grid-cols-2 gap-12">
+          <div>
+            <h2 class="text-4xl font-bold mb-6">Let's Work Together</h2>
+            <p class="text-white-400 mb-8">
+              Ready to start your next project? Get in touch and let's create
+              something amazing together.
+            </p>
+            <div class="space-y-4">
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4"
+                >
+                  <i class="ri-mail-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold">Email</h4>
+                  <p class="text-white-400">farhanmuti54@gmail.com</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4"
+                >
+                  <i class="ri-phone-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold">Phone</h4>
+                  <p class="text-white-400">+62-8388-0015-85</p>
+                </div>
+              </div>
+              <div class="flex items-center">
+                <div
+                  class="w-12 h-12 bg-primary/20 rounded-lg flex items-center justify-center mr-4"
+                >
+                  <i class="ri-map-pin-line text-primary"></i>
+                </div>
+                <div>
+                  <h4 class="font-bold">Location</h4>
+                  <p class="text-white-400">South Sulawesi, Makassar City</p>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div>
+            <form class="space-y-4 md:space-y-6">
+              <div>
+                <label class="block text-sm font-medium mb-2">Name</label>
+                <input
+                  type="text"
+                  class="w-full bg-white-800 border-none !rounded-button p-3 text-white-300"
+                  placeholder="Your name"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Email</label>
+                <input
+                  type="email"
+                  class="w-full bg-white-800 border-none !rounded-button p-3 text-white-300"
+                  placeholder="Your email"
+                />
+              </div>
+              <div>
+                <label class="block text-sm font-medium mb-2">Message</label>
+                <textarea
+                  class="w-full bg-white-800 border-none !rounded-button p-3 text-white-300 h-32"
+                  placeholder="Your message"
+                ></textarea>
+              </div>
+              <button
+                type="submit"
+                class="w-full bg-primary text-black px-8 py-3 !rounded-button hover:bg-primary/90 transition-colors"
+              >
+                Send Message
+              </button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+    <footer class="bg-secondary py-12">
+      <div class="container mx-auto px-4 sm:px-12">
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8 mb-8">
+          <div>
+            <a
+              href="#"
+              class="text-3xl font-['Pacifico'] text-primary mb-4 block"
+              ><img src="asset/logo.png" class="w-20" alt=""
+            /></a>
+            <p class="text-white-400">
+              Creating exceptional digital experiences through thoughtful design
+              and innovation.
+            </p>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Quick Links</h4>
+            <ul class="space-y-2">
+              <li>
+                <a href="#home" class="text-white-400 hover:text-primary"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a href="#about" class="text-white-400 hover:text-primary"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a href="#portfolio" class="text-white-400 hover:text-primary"
+                  >Portfolio</a
+                >
+              </li>
+              <li>
+                <a href="#services" class="text-white-400 hover:text-primary"
+                  >Services</a
+                >
+              </li>
+            </ul>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Connect</h4>
+            <div class="flex space-x-4">
+              <a
+                href="https://wa.me/08388001585"
+                class="w-10 h-10 bg-white-800 rounded-full flex items-center justify-center hover:bg-primary/20"
+              >
+                <i class="ri-whatsapp-line text-primary"></i>
+              </a>
+              <a
+                href="https://www.instagram.com/muhammadfarhan_askar/"
+                class="w-10 h-10 bg-white-800 rounded-full flex items-center justify-center hover:bg-primary/20"
+              >
+                <i class="ri-instagram-line text-primary"></i>
+              </a>
+              <a
+                href="https://farhan181206.github.io/farhan/"
+                class="w-10 h-10 bg-white-800 rounded-full flex items-center justify-center hover:bg-primary/20"
+              >
+                <i class="ri-id-card-line text-primary"></i>
+              </a>
+            </div>
+          </div>
+          <div>
+            <h4 class="font-bold mb-4">Newsletter</h4>
+            <form class="flex">
+              <input
+                type="email"
+                class="flex-1 bg-white-800 border-none !rounded-l-button p-3 text-white-300"
+                placeholder="Your email"
+              />
+              <button
+                type="submit"
+                class="bg-primary text-black px-6 !rounded-r-button hover:bg-primary/90 transition-colors"
+              >
+                <i class="ri-send-plane-line"></i>
+              </button>
+            </form>
+          </div>
+        </div>
+        <div class="border-t border-white-800 pt-8 text-center">
+          <p class="text-white-400">&copy; 2025 All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+    <button
+      id="backToTop"
+      class="fixed bottom-4 sm:bottom-8 right-4 sm:right-8 w-10 h-10 sm:w-12 sm:h-12 bg-primary text-black rounded-full flex items-center justify-center opacity-0 transition-opacity duration-300 cursor-pointer"
+    >
+      <i class="ri-arrow-up-line"></i>
+    </button>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const backToTop = document.getElementById("backToTop");
+        const mobileMenu = document.querySelector(".md\\:flex");
+        const menuButton = document.querySelector(".md\\:hidden");
+        const filterBtns = document.querySelectorAll(".filter-btn");
+        const portfolioItems = document.querySelectorAll(".portfolio-item");
+        filterBtns.forEach((btn) => {
+          btn.addEventListener("click", () => {
+            const category = btn.getAttribute("data-category");
+            filterBtns.forEach((b) => {
+              b.classList.remove("bg-primary", "text-black");
+              b.classList.add("bg-white-800", "text-white-300");
+            });
+            btn.classList.remove("bg-white-800", "text-white-300");
+            btn.classList.add("bg-primary", "text-black");
+            portfolioItems.forEach((item) => {
+              if (
+                category === "all" ||
+                item.getAttribute("data-category") === category
+              ) {
+                item.style.display = "block";
+                setTimeout(() => {
+                  item.style.opacity = "1";
+                  item.style.transform = "scale(1)";
+                }, 50);
+              } else {
+                item.style.opacity = "0";
+                item.style.transform = "scale(0.8)";
+                setTimeout(() => {
+                  item.style.display = "none";
+                }, 300);
+              }
+            });
+          });
+        });
+        window.addEventListener("scroll", function () {
+          if (window.pageYOffset > 300) {
+            backToTop.style.opacity = "1";
+          } else {
+            backToTop.style.opacity = "0";
+          }
+        });
+        backToTop.addEventListener("click", function () {
+          window.scrollTo({
+            top: 0,
+            behavior: "smooth",
+          });
+        });
+        menuButton.addEventListener("click", function () {
+          mobileMenu.classList.toggle("hidden");
+        });
+        document.querySelectorAll('a[href^="#"]').forEach((anchor) => {
+          anchor.addEventListener("click", function (e) {
+            e.preventDefault();
+            document.querySelector(this.getAttribute("href")).scrollIntoView({
+              behavior: "smooth",
+            });
+          });
+        });
+        const form = document.querySelector("form");
+        form.addEventListener("submit", function (e) {
+          e.preventDefault();
+          const formData = new FormData(form);
+          console.log("Form submitted:", Object.fromEntries(formData));
+        });
+      });
+    </script>
+  </body>
+</html>
